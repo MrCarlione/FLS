@@ -1,0 +1,5 @@
+/Users/mac/GitHub/FLS/FLS/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/mac/GitHub/FLS/FLS/bin/Debug/FLS.exe.mdb
+/Users/mac/GitHub/FLS/FLS/bin/Debug/FLS.exe
+/Users/mac/GitHub/FLS/FLS/obj/x86/Debug/FLS.exe
+/Users/mac/GitHub/FLS/FLS/obj/x86/Debug/FLS.exe.mdb
