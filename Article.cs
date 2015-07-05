@@ -13,11 +13,12 @@ namespace Journal
 		DateTime date;
 		User user;
 
-		public Article(string header, string content, DateTime date) //Constructor
+		public Article(string header, string content, DateTime date, User user) //Constructor
 		{
 			this.header = header;
 			this.content = content;
 			this.date = date;
+			this.user = user;
 		}
 
 		public string Title //Setup/edit header
