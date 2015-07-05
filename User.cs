@@ -6,51 +6,35 @@ using System.Threading.Tasks;
 
 namespace Journal
 {
-	class User
+	public class User
 	{
-		String f_name; //First name
-		String s_name; //Last name
-		Int32 age; //Age
-		List<Article> Articles;
+		string firstName; //First name
+		string secondName; //Last name
+		int age; //Age
 
-		public User(String name, String surname, Int32 age) //Constructor
+		public User(string name, string surname, int age) //Constructor
 		{
-			f_name = name;
-			s_name = surname;
+			firstName = name;
+			secondName = surname;
 			this.age = age;
-			Articles = new List<Article>(); //("No article.", "No contents."));
 		}
 
-		public String Name //Setup/edit name
+		public string Name //Setup/edit name
 		{ 
-			get { return f_name; }
-			set { value = f_name; }
+			get { return firstName; }
+			set { value = firstName; }
 		}
 
-		public String Surname //Setup/edit surname
+		public string Surname //Setup/edit surname
 		{
-			get { return s_name; }
-			set { value = s_name; }
+			get { return secondName; }
+			set { value = secondName; }
 		}
 
-		public Int32 Age //Setup/edit age
+		public int Age //Setup/edit age
 		{
 			get { return age; }
 			set { value = age; }
-		}
-
-		public void AddArticle(Article a) //Add article to the current user
-		{
-			Articles.Add(a);
-		}
-
-		public void ShowArticles() //Show all articles by user
-		{
-			Console.WriteLine("User {0} have a {1} articles.", this.Name, Articles.Count);
-			foreach (var a in Articles)
-			{
-				Console.WriteLine("\tTitle: {0}\n\tContent: {1}\n", a.Title, a.Content);
-			}
 		}
 	}
 }

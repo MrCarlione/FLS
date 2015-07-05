@@ -6,26 +6,27 @@ using System.Threading.Tasks;
 
 namespace Journal
 {
-	class Article
+	public class Article
 	{
-		String header;
-		String content;
+		string header;
+		string content;
 		DateTime date;
+		User user;
 
-		public Article(String header = "", String content = "") //Constructor
+		public Article(string header, string content, DateTime date) //Constructor
 		{
 			this.header = header;
 			this.content = content;
-			date = DateTime.Now;
+			this.date = date;
 		}
 
-		public String Title //Setup/edit header
+		public string Title //Setup/edit header
 		{
 			get { return header; }
 			set { value = header; }
 		}
 
-		public String Content //Setup/edit content
+		public string Content //Setup/edit content
 		{
 			get { return content; }
 			set { value = content; }
