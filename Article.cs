@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Journal
+namespace FLS
 {
 	public class Article
 	{

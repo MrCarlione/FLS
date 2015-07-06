@@ -1,8 +1,10 @@
-﻿using System;
+﻿using System.Globalization;
 
-namespace Journal
+namespace FLS
 {
     class Comment : ICommentaries
-	{
-	}
+    {
+        string header;
+        string content;
+    }
 }

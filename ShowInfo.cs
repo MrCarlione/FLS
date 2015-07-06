@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Journal
+namespace FLS
 {
 	static public class ShowInfo
 	{

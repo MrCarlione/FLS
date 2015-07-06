@@ -1,4 +1,4 @@
-﻿namespace Journal
+﻿namespace FLS
 {
     public interface ICommentaries
     {
