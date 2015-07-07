@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FLS
 {
@@ -8,6 +9,7 @@ namespace FLS
 		string content;
 		DateTime date;
 		User user;
+	    List<ICommentaries> IComm; 
 
 		public Article(string header, string content, DateTime date, User user) //Constructor
 		{
@@ -28,5 +30,10 @@ namespace FLS
 			get { return content; }
 			set { value = content; }
 		}
+
+	    void AddNotice(ICommentaries commentaries)
+	    {
+	        IComm.Add(commentaries);
+	    }
 	}
 }
