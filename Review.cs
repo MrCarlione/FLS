@@ -2,7 +2,7 @@
 
 namespace FLS
 {
-    class Review : ICommentaries
+    class Review : INotice
     {
         string header;
         string content;
@@ -13,6 +13,11 @@ namespace FLS
             this.header = header;
             this.content = content;
             this.rating = rating;
+        }
+
+        INotice Add(Article a)
+        {
+
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace FLS
 {
-    class Comment : ICommentaries
+    class Comment : INotice
     {
         string header;
         string content;
@@ -11,6 +11,11 @@ namespace FLS
         {
             this.header = header;
             this.content = content;
+        }
+
+        INotice Add(Article a)
+        {
+            
         }
     }
 }

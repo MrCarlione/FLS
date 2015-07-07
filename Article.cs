@@ -9,7 +9,7 @@ namespace FLS
 		string content;
 		DateTime date;
 		User user;
-	    List<ICommentaries> IComm; 
+	    private List<INotice> noteList;
 
 		public Article(string header, string content, DateTime date, User user) //Constructor
 		{
@@ -30,10 +30,5 @@ namespace FLS
 			get { return content; }
 			set { value = content; }
 		}
-
-	    void AddNotice(ICommentaries commentaries)
-	    {
-	        IComm.Add(commentaries);
-	    }
 	}
 }
