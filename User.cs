@@ -2,33 +2,33 @@
 {
 	public class User
 	{
-		string firstName; //First name
-		string secondName; //Last name
-		int age; //Age
+		string firstName;
+	    string secondName;
+		int age;
 
-		public User(string name, string surname, int age) //Constructor
+		public User(string name, string surname, int age)
 		{
 			firstName = name;
 			secondName = surname;
 			this.age = age;
 		}
 
-		public string Name //Setup/edit name
+		public string Name
 		{ 
 			get { return firstName; }
-			set { value = firstName; }
+            set { firstName = value; }
 		}
 
-		public string Surname //Setup/edit surname
+		public string Surname
 		{
 			get { return secondName; }
-			set { value = secondName; }
+            set { secondName = value; }
 		}
 
-		public int Age //Setup/edit age
+		public int Age
 		{
 			get { return age; }
-			set { value = age; }
+            set { age = value; }
 		}
 	}
 }

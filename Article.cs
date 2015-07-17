@@ -9,9 +9,9 @@ namespace FLS
 		string content;
 		DateTime date;
 		User user;
-	    private List<INotice> noteList;
+	    public List<INotice> noteList;
 
-		public Article(string header, string content, DateTime date, User user) //Constructor
+		public Article(string header, string content, DateTime date, User user)
 		{
 			this.header = header;
 			this.content = content;
@@ -19,16 +19,16 @@ namespace FLS
 			this.user = user;
 		}
 
-		public string Title //Setup/edit header
+		public string Title
 		{
 			get { return header; }
-			set { value = header; }
+			set { header = value; }
 		}
 
-		public string Content //Setup/edit content
+		public string Content
 		{
 			get { return content; }
-			set { value = content; }
+			set { content = value; }
 		}
 	}
 }

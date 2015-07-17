@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
 namespace FLS
 {
@@ -13,9 +14,9 @@ namespace FLS
             this.content = content;
         }
 
-        INotice Add(Article a)
+        public void WriteInfo()
         {
-            
+            Console.WriteLine(header + " - " + content);
         }
     }
 }

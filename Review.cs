@@ -1,4 +1,5 @@
-﻿using System.Runtime.Remoting.Messaging;
+﻿using System;
+using System.Runtime.Remoting.Messaging;
 
 namespace FLS
 {
@@ -15,9 +16,9 @@ namespace FLS
             this.rating = rating;
         }
 
-        INotice Add(Article a)
+        public void WriteInfo()
         {
-
+            Console.WriteLine(header + " - " + content + " - " + rating);
         }
     }
 }
