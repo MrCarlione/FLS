@@ -7,9 +7,21 @@ namespace FLS
 	{
 		static void Main(string[] args)
 		{
-			var i = Initialize();
-			ShowInfo.PrintArticles(i);
-			Console.ReadKey();
+			var Articles = Initialize();
+			ShowInfo.PrintArticles(Articles);
+
+		    for (var i = 0; i < Articles.Count; i++)
+		    {
+		        foreach (var note in Articles[i].List)
+		        {
+		            if (note != null)
+		            {
+		                note.WriteInfo();
+		            }
+		        }
+		    }
+
+		    Console.ReadKey();
 		}
 
 		static public List<Article> Initialize()
@@ -40,8 +52,21 @@ namespace FLS
             Articles.Add(article5); 
             Articles.Add(article6);
 
-            return Articles;
+            Review review1 = new Review("Good article!", "Article good.", 5, user1);
+            Review review2 = new Review("Bad article!", "Article is bad.", 2, user2);
+            Comment comment = new Comment("Kruto!", "Vsem obiasnili.", user3);
+            Comment comment2 = new Comment("Ne shumit.", "Ded zastrelil sozhitelia i on bol'she ne shumit.", user3);
+            Comment comment3 = new Comment("Salut!", "Vsem ponravilos'.", user2);
+            Comment comment4 = new Comment("Windows 10", "Zhdem.", user1);
 
+            article.Add(review1);
+            article.Add(comment3);
+            article.Add(comment);
+            article2.Add(review2);
+            article3.Add(comment2);
+            article3.Add(comment4);
+
+            return Articles;
 		}
 	}
 }

@@ -5,5 +5,6 @@ namespace FLS
     public interface INotice
     {
         void WriteInfo();
+        string GetString();
     }
 }
