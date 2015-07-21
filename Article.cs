@@ -9,7 +9,7 @@ namespace FLS
 		string content;
 		DateTime date;
 		User user;
-	    List<INotice> noteList = new List<INotice>();
+	    List<INotice> INoticeList = new List<INotice>();
 
 		public Article(string header, string content, DateTime date, User user)
 		{
@@ -31,28 +31,14 @@ namespace FLS
 			set { content = value; }
 		}
 
-        public List<INotice> List
+        public List<INotice> INoticesCollections
 	    {
-	        get { return noteList; }
+            get { return INoticeList; }
 	    }
-
-        //public INotice this[int index]
-        //{
-        //    get { return noteList[index]; }
-        //}
 
 	    public void Add(INotice notice)
 	    {
-            noteList.Add(notice);
+            INoticeList.Add(notice);
 	    }
-
-        //private string GetNotice()
-        //{
-        //    foreach (var note in noteList)
-        //    {
-        //        return note.GetString();
-        //    }
-        //    throw new ArgumentOutOfRangeException();
-        //}
 	}
 }

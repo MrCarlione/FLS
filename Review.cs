@@ -3,27 +3,20 @@ using System.Runtime.Remoting.Messaging;
 
 namespace FLS
 {
-    class Review : INotice
+    class Review : Comment, INotice
     {
         string header;
         string content;
         int rating;
         User user;
 
-        public Review(string header, string content, int rating, User user)
+        public Review(string header, string content, User user)
+            : base(header, content, user)
         {
-            this.header = header;
-            this.content = content;
             this.rating = rating;
-            this.user = user;
         }
 
-        public void WriteInfo()
-        {
-            Console.WriteLine(header + " - " + content + " - " + rating);
-        }
-
-        public string GetString()
+        new public string INoticeStringFormat()
         {
             return header + " - " + content + " - " + rating;
         }

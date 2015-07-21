@@ -12,11 +12,11 @@ namespace FLS
 
 		    for (var i = 0; i < Articles.Count; i++)
 		    {
-		        foreach (var note in Articles[i].List)
+                foreach (var note in Articles[i].INoticesCollections)
 		        {
 		            if (note != null)
 		            {
-		                note.WriteInfo();
+                        Console.WriteLine(note.INoticeStringFormat());
 		            }
 		        }
 		    }
@@ -52,8 +52,8 @@ namespace FLS
             Articles.Add(article5); 
             Articles.Add(article6);
 
-            Review review1 = new Review("Good article!", "Article good.", 5, user1);
-            Review review2 = new Review("Bad article!", "Article is bad.", 2, user2);
+            Review review1 = new Review("Good article!", "Article good.", user1, 5);
+            Review review2 = new Review("Bad article!", "Article is bad.", user2, 2);
             Comment comment = new Comment("Kruto!", "Vsem obiasnili.", user3);
             Comment comment2 = new Comment("Ne shumit.", "Ded zastrelil sozhitelia i on bol'she ne shumit.", user3);
             Comment comment3 = new Comment("Salut!", "Vsem ponravilos'.", user2);

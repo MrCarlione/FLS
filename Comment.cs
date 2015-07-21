@@ -16,12 +16,7 @@ namespace FLS
             this.user = user;
         }
 
-        public void WriteInfo()
-        {
-            Console.WriteLine(header + " - " + content);
-        }
-
-        public string GetString()
+        public string INoticeStringFormat()
         {
             return header + " - " + content;
         }
