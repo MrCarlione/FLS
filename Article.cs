@@ -9,7 +9,7 @@ namespace FLS
 		string content;
 		DateTime date;
 		User user;
-	    List<INotice> INoticeList = new List<INotice>();
+	    List<INotice> noticeList = new List<INotice>();
 
 		public Article(string header, string content, DateTime date, User user)
 		{
@@ -31,14 +31,9 @@ namespace FLS
 			set { content = value; }
 		}
 
-        public List<INotice> INoticesCollections
+        public List<INotice> NoticesCollection
 	    {
-            get { return INoticeList; }
-	    }
-
-	    public void Add(INotice notice)
-	    {
-            INoticeList.Add(notice);
+            get { return noticeList; }
 	    }
 	}
 }

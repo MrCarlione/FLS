@@ -11,9 +11,9 @@ namespace FLS
 		}
 
         public static void ShowUser(User user)
-		{
-			Console.WriteLine("\tUser name: {0}\n\tUser surname: {1}\n\tAge user: {2}\n", user.Name, user.Surname, user.Age);
-		}
+        {
+            Console.WriteLine(user.ToString());
+        }
 
         public static void PrintArticles(List<Article> articles)
 		{

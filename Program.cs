@@ -7,16 +7,16 @@ namespace FLS
 	{
 		static void Main(string[] args)
 		{
-			var Articles = Initialize();
-			ShowInfo.PrintArticles(Articles);
+			var articles = Initialize();
+			ShowInfo.PrintArticles(articles);
 
-		    for (var i = 0; i < Articles.Count; i++)
+		    foreach (var article in articles)
 		    {
-                foreach (var note in Articles[i].INoticesCollections)
+                foreach (var note in article.NoticesCollection)
 		        {
 		            if (note != null)
 		            {
-                        Console.WriteLine(note.INoticeStringFormat());
+                        Console.WriteLine(note.NoticeStringFormat());
 		            }
 		        }
 		    }
@@ -25,7 +25,7 @@ namespace FLS
 
 		static public List<Article> Initialize()
 		{
-			List<Article> Articles = new List<Article>();
+			List<Article> resultArticles = new List<Article>();
 			User user1 = new User("Oleg", "Popov", 35);
 			User user2 = new User("Gleb", "Petrov", 30);
 			User user3 = new User("Marat", "Semenov", 43);
@@ -41,15 +41,15 @@ namespace FLS
 			Article article5 = new Article("Music", "Tim Lambesis poluchil 4 goda tur'mu za poputku ubit' zhenu.", DateTime.Now, user3);
 			Article article6 = new Article("Counry", "Armenia protestuet protiv povushenia tarifov na elektroenergiu.", DateTime.Now, user3);
 
-            Articles.Add(article1); 
-            Articles.Add(article12); 
-            Articles.Add(article13);
-            Articles.Add(article); 
-            Articles.Add(article2); 
-            Articles.Add(article3); 
-            Articles.Add(article4); 
-            Articles.Add(article5); 
-            Articles.Add(article6);
+            resultArticles.Add(article1); 
+            resultArticles.Add(article12); 
+            resultArticles.Add(article13);
+            resultArticles.Add(article); 
+            resultArticles.Add(article2); 
+            resultArticles.Add(article3); 
+            resultArticles.Add(article4); 
+            resultArticles.Add(article5); 
+            resultArticles.Add(article6);
 
             Review review1 = new Review("Good article!", "Article good.", user1, 5);
             Review review2 = new Review("Bad article!", "Article is bad.", user2, 2);
@@ -58,14 +58,14 @@ namespace FLS
             Comment comment3 = new Comment("Salut!", "Vsem ponravilos'.", user2);
             Comment comment4 = new Comment("Windows 10", "Zhdem.", user1);
 
-            article.Add(review1);
-            article.Add(comment3);
-            article.Add(comment);
-            article2.Add(review2);
-            article3.Add(comment2);
-            article3.Add(comment4);
+            article.NoticesCollection.Add(review1);
+            article.NoticesCollection.Add(comment3);
+            article.NoticesCollection.Add(comment);
+            article2.NoticesCollection.Add(review2);
+            article3.NoticesCollection.Add(comment2);
+            article3.NoticesCollection.Add(comment4);
 
-            return Articles;
+            return resultArticles;
 		}
 	}
 }

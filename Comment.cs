@@ -16,7 +16,7 @@ namespace FLS
             this.user = user;
         }
 
-        public virtual string INoticeStringFormat()
+        public virtual string NoticeStringFormat()
         {
             return header + " - " + content;
         }

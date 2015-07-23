@@ -2,6 +2,6 @@
 {
     public interface INotice
     {
-        string INoticeStringFormat();
+        string NoticeStringFormat();
     }
 }

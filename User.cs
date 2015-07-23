@@ -13,22 +13,10 @@
 			this.age = age;
 		}
 
-		public string Name
-		{ 
-			get { return firstName; }
-            set { firstName = value; }
-		}
-
-		public string Surname
-		{
-			get { return secondName; }
-            set { secondName = value; }
-		}
-
-		public int Age
-		{
-			get { return age; }
-            set { age = value; }
-		}
+	    public override string ToString()
+	    {
+	        string toString = firstName + " " + secondName + ", " + age;
+	        return toString;
+	    }
 	}
 }

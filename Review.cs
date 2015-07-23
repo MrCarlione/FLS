@@ -12,9 +12,9 @@ namespace FLS
             this.rating = rating;
         }
 
-        public override string INoticeStringFormat()
+        public override string NoticeStringFormat()
         {
-            return header + " - " + content + " - " + rating;
+            return base.NoticeStringFormat() + " - " + rating;
         }
     }
 }
