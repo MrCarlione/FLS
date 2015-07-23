@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Remoting.Messaging;
 
 namespace FLS
 {
@@ -10,6 +9,11 @@ namespace FLS
         public Review(string header, string content, User user, int rating) : base(header, content, user)
         {
             this.rating = rating;
+        }
+
+        public int GetRating
+        {
+            get { return rating; }
         }
 
         public override string NoticeStringFormat()

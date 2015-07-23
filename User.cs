@@ -1,4 +1,6 @@
-﻿namespace FLS
+﻿using System;
+
+namespace FLS
 {
 	public class User
 	{
@@ -18,5 +20,18 @@
 	        string toString = firstName + " " + secondName + ", " + age;
 	        return toString;
 	    }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+            User user = (User)obj;
+            return (firstName == user.firstName) && (secondName == user.secondName) && (age == user.age);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 	}
 }

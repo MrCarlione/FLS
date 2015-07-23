@@ -1,4 +1,6 @@
-﻿namespace FLS
+﻿using System;
+
+namespace FLS
 {
     public interface INotice
     {

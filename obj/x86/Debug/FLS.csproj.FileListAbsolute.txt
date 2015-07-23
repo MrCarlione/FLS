@@ -3,3 +3,8 @@ C:\Users\igolubev\Documents\GitHub\FLS\bin\Debug\FLS.exe
 C:\Users\igolubev\Documents\GitHub\FLS\bin\Debug\FLS.pdb
 C:\Users\igolubev\Documents\GitHub\FLS\obj\x86\Debug\FLS.pdb
 C:\Users\igolubev\Documents\GitHub\FLS\obj\x86\Debug\FLS.csprojResolveAssemblyReference.cache
+C:\Users\Ilya\Documents\GitHub\FLS\obj\x86\Debug\FLS.exe
+C:\Users\Ilya\Documents\GitHub\FLS\obj\x86\Debug\FLS.pdb
+C:\Users\Ilya\Documents\GitHub\FLS\bin\Debug\FLS.exe
+C:\Users\Ilya\Documents\GitHub\FLS\bin\Debug\FLS.pdb
+C:\Users\Ilya\Documents\GitHub\FLS\obj\x86\Debug\FLS.csprojResolveAssemblyReference.cache

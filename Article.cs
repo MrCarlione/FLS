@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace FLS
@@ -9,7 +10,7 @@ namespace FLS
 		string content;
 		DateTime date;
 		User user;
-	    List<INotice> noticeList = new List<INotice>();
+	    List<INotice> noticeList = new List<INotice>();        
 
 		public Article(string header, string content, DateTime date, User user)
 		{
@@ -30,6 +31,11 @@ namespace FLS
 			get { return content; }
 			set { content = value; }
 		}
+
+        public User GetUser 
+        {
+            get { return user; }
+        }
 
         public List<INotice> NoticesCollection
 	    {
