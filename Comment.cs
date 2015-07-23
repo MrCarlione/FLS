@@ -5,8 +5,8 @@ namespace FLS
 {
     class Comment : INotice
     {
-        string header;
-        string content;
+        protected string header;
+        protected string content;
         User user;
 
         public Comment(string header, string content, User user)
@@ -16,7 +16,7 @@ namespace FLS
             this.user = user;
         }
 
-        public string INoticeStringFormat()
+        public virtual string INoticeStringFormat()
         {
             return header + " - " + content;
         }
