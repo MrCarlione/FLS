@@ -37,6 +37,11 @@ namespace FLS
             get { return user; }
         }
 
+        public DateTime GetDateTime
+        {
+            get { return date; }
+        }
+
         public List<INotice> NoticesCollection
 	    {
             get { return noticeList; }

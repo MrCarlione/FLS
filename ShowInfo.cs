@@ -83,6 +83,19 @@ namespace FLS
             }
             Console.WriteLine("Average rating by article \"{0}\" is {1:#.##}.", article.Title, average / i);
         }
+
+        public static void PrintArticlesByDate(List<Article> articles, DateTime date)
+        {
+            Console.WriteLine("All article by this date " + date.ToString("dd.MM.yyyy"));
+            foreach (var article in articles)
+            {
+                if (date.ToString("dd.MM.yyyy") == article.GetDateTime.ToString("dd.MM.yyyy"))
+                {
+                    PrintArticleInfo(article);
+                }
+            }
+        }
+
 	}
 }
 

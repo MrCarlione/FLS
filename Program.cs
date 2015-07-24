@@ -27,9 +27,8 @@ namespace FLS
             ShowInfo.PrintAverageRatingByArticle(articles[0]);
             Console.WriteLine();
 
-            //DateTime date = DateTime.Now;
-            //ShowInfo.PrintActualArticlesByDate(articles, date);
-            //Console.WriteLine();
+            ShowInfo.PrintArticlesByDate(articles, DateTime.Now); //new DateTime(2015, 07, 22)
+            Console.WriteLine();
 
 		    Console.ReadKey();
 		}
@@ -47,9 +46,9 @@ namespace FLS
 			Article article4 = new Article("Auto", "Smart FourTwo obzavelsia novoi electronikoi.", DateTime.Now, user3);
 			Article article5 = new Article("Music", "Tim Lambesis poluchil 4 goda tur'mu za poputku ubit' zhenu.", DateTime.Now, user3);
 			Article article6 = new Article("Counry", "Armenia protestuet protiv povushenia tarifov na elektroenergiu.", DateTime.Now, user3);
-            Article article7 = new Article("Sport", "Blatter uhodit s posta prezidenta FIFA.", DateTime.Now, user1);
+            Article article7 = new Article("Sport", "Blatter uhodit s posta prezidenta FIFA.", new DateTime(2015, 05, 10), user1);
             Article article8 = new Article("Region news", "Sergei Sobianin otravilsia shaurmoi na kurskom vokzale!", DateTime.Now, user1);
-            Article article9 = new Article("Business", "MosOblBank lishen licensii.", DateTime.Now, user1);
+            Article article9 = new Article("Business", "MosOblBank lishen licensii.", new DateTime(2015, 07, 22), user1);
 
             resultArticles.Add(article); 
             resultArticles.Add(article2); 
