@@ -62,7 +62,7 @@ namespace FLS
             }
         }
 
-        public static void PrintAverageRatingByArticle(Article article)
+        private static double AverageRating(Article article)
         {
             double average = 0;
             int i = 0;
@@ -75,7 +75,12 @@ namespace FLS
                     i++;
                 }
             }
-            Console.WriteLine("Average rating by article \"{0}\" is {1:#.##}.", article.Title, average / i);
+            return average / i;
+        }
+
+        public static void PrintAverageRatingByArticle(Article article)
+        {
+            Console.WriteLine("Average rating by article \"{0}\" is {1:#.##}.", article.Title, AverageRating(article));
         }
 
         public static void PrintArticlesByDate(List<Article> articles, DateTime date)
@@ -109,5 +114,14 @@ namespace FLS
                 }
             }
 	    }
+
+        public static void PrintUserByArticleAverageRating(List<Article> articles, double rating)
+        {
+            foreach (var article in articles)
+            {
+                if (AverageRating(article) > rating)
+                    Console.WriteLine("Article {0} has a rating not lower than {1}.", article.Title, rating);
+            }
+        }
 	}
 }
