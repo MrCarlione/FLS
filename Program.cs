@@ -30,7 +30,10 @@ namespace FLS
             ShowInfo.PrintArticlesByDate(articles, DateTime.Now); //new DateTime(2015, 07, 22)
             Console.WriteLine();
 
-		    Console.ReadKey();
+		    ShowInfo.PrintUserWithNCommentByArticle(articles, 1);
+            Console.WriteLine();
+		    
+            Console.ReadKey();
 		}
 
 		static public List<Article> Initialize()
@@ -67,13 +70,17 @@ namespace FLS
             Comment comment = new Comment("Kruto!", "Vsem obiasnili.", user3);
             Comment comment2 = new Comment("Ne shumit.", "Ded zastrelil sozhitelia i on bol'she ne shumit.", user3);
             Comment comment3 = new Comment("Salut!", "Vsem ponravilos'.", user2);
-            Comment comment4 = new Comment("Windows 10", "Zhdem.", user1);
+            Comment comment4 = new Comment("Windows 10", "Zhdem.", user3);
+            Comment comment5 = new Comment("Windows 10", "Zhdem.", user3);
+            Comment comment6 = new Comment("Windows 10", "Zhdem.", user2);
 
             article.NoticesCollection.Add(review1);
             article.NoticesCollection.Add(review3);
             article.NoticesCollection.Add(review4);
             article.NoticesCollection.Add(comment3);
             article.NoticesCollection.Add(comment);
+            article.NoticesCollection.Add(comment5);
+            article.NoticesCollection.Add(comment6);
             article2.NoticesCollection.Add(review2);
             article3.NoticesCollection.Add(comment2);
             article3.NoticesCollection.Add(comment4);

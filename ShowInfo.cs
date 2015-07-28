@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FLS
 {
@@ -96,6 +97,24 @@ namespace FLS
             }
         }
 
+	    public static void PrintUserWithNCommentByArticle(List<Article> articles, int n)
+	    {
+            int count = 0;
+            foreach (var article in articles)
+            {
+                foreach (var note in article.NoticesCollection)
+                {
+                    if (note.GetType().Name == "Comment")
+                    {
+                        count++;
+                    }
+                }
+                if (count > n)
+                {
+                    Console.WriteLine("Article by user {0} has more than {1} comments", article.GetUser, n);
+                    count = 0;
+                }
+            }
+	    }
 	}
 }
-
