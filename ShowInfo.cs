@@ -68,18 +68,11 @@ namespace FLS
             int i = 0;
             foreach (var a in article.NoticesCollection)
             {
-                try
+                if (a is Review)
                 {
-                    if ((Review)a is Review)
-                    {
-                        var im = (Review)a;
-                        average += im.GetRating;
-                        i++;
-                    }
-                }
-                catch
-                {
-                    continue;
+                    var im = (Review)a;
+                    average += im.GetRating;
+                    i++;
                 }
             }
             Console.WriteLine("Average rating by article \"{0}\" is {1:#.##}.", article.Title, average / i);
