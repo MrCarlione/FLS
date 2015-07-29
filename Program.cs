@@ -33,7 +33,10 @@ namespace FLS
 		    ShowInfo.PrintUserWithNCommentByArticle(articles, 1);
             Console.WriteLine();
 
-            ShowInfo.PrintUserByArticleAverageRating(articles, 0);
+            ShowInfo.PrintByArticleWithAverageRating(articles, 4);
+            Console.WriteLine();
+
+            ShowInfo.PrintArticlesContainsSearchText(articles, "news");
             Console.WriteLine();
 		    
             Console.ReadKey();

@@ -8,7 +8,7 @@ namespace FLS
 	{
 		public static void PrintArticleInfo(Article article)
 		{
-            Console.WriteLine("\tTitle: {0}\n\tContent: {1}\n", article.Title, article.Content);
+            Console.WriteLine("Title: {0}\n\tContent: {1}\n", article.Title, article.Content);
 		}
 
         public static void PrintUser(User user)
@@ -115,12 +115,21 @@ namespace FLS
             }
 	    }
 
-        public static void PrintUserByArticleAverageRating(List<Article> articles, double rating)
+        public static void PrintByArticleWithAverageRating(List<Article> articles, double rating)
         {
             foreach (var article in articles)
             {
                 if (AverageRating(article) > rating)
-                    Console.WriteLine("Article {0} has a rating not lower than {1}.", article.Title, rating);
+                    Console.WriteLine("Article '{0}' has a rating not lower than {1}.", article.Title, rating);
+            }
+        }
+
+        public static void PrintArticlesContainsSearchText(List<Article> articles, string text)
+        {
+            foreach (var article in articles)
+            {
+                if (article.Title.Contains(text))
+                    PrintArticleInfo(article);
             }
         }
 	}
