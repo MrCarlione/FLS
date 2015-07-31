@@ -10,34 +10,35 @@ namespace FLS
 			var articles = Initialize();
 
 			ShowInfo.PrintArticles(articles);
-            Console.WriteLine();
+            Console.WriteLine("-----------------------------------------");
 
             User user = new User("Oleg", "Popov", 35);
             ShowInfo.PrintArticlesByUser(articles, user);
-            Console.WriteLine();
+            Console.WriteLine("-----------------------------------------");
 
             ShowInfo.PrintAllNoticeElements(articles);
-            Console.WriteLine();
+            Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintCommentOrReviewByArticle(articles[0], "Review");
-            Console.WriteLine();
-            ShowInfo.PrintCommentOrReviewByArticle(articles[0], "Comment");
-            Console.WriteLine();
+            ShowInfo.PrintCommentOrReviewByArticle(articles[0]);
+            Console.WriteLine("-----------------------------------------");
+
+            ShowInfo.PrintCommentOrReviewByArticle(articles[0]);
+            Console.WriteLine("-----------------------------------------");
 
             ShowInfo.PrintAverageRatingByArticle(articles[0]);
-            Console.WriteLine();
+            Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintArticlesByDate(articles, DateTime.Now); //new DateTime(2015, 07, 22)
-            Console.WriteLine();
+            ShowInfo.PrintArticlesByDate(articles, DateTime.Now);
+            Console.WriteLine("-----------------------------------------");
 
 		    ShowInfo.PrintUserWithNCommentByArticle(articles, 1);
-            Console.WriteLine();
+            Console.WriteLine("-----------------------------------------");
 
             ShowInfo.PrintByArticleWithAverageRating(articles, 4);
-            Console.WriteLine();
+            Console.WriteLine("-----------------------------------------");
 
             ShowInfo.PrintArticlesContainsSearchText(articles, "news");
-            Console.WriteLine();
+            Console.WriteLine("-----------------------------------------");
 		    
             Console.ReadKey();
 		}
@@ -77,8 +78,8 @@ namespace FLS
             Comment comment2 = new Comment("Ne shumit.", "Ded zastrelil sozhitelia i on bol'she ne shumit.", user3);
             Comment comment3 = new Comment("Salut!", "Vsem ponravilos'.", user2);
             Comment comment4 = new Comment("Windows 10", "Zhdem.", user3);
-            Comment comment5 = new Comment("Windows 10", "Zhdem.", user3);
-            Comment comment6 = new Comment("Windows 10", "Zhdem.", user2);
+            Comment comment5 = new Comment("Gaz", "Perekroem Ukraine gaz.", user3);
+            Comment comment6 = new Comment("Vustuplenie", "Proshlo na ura.", user2);
 
             article.NoticesCollection.Add(review1);
             article.NoticesCollection.Add(review3);

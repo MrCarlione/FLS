@@ -50,7 +50,7 @@ namespace FLS
             }
         }
 
-        public static void PrintCommentOrReviewByArticle(Article article, string type)
+        public static void PrintCommentOrReviewByArticle(Article article, dynamic type)
         {
             Console.WriteLine(type + " on the article " + article.Title);
             foreach (var a in article.NoticesCollection)
@@ -66,14 +66,13 @@ namespace FLS
         {
             double average = 0;
             int i = 0;
-            foreach (var a in article.NoticesCollection)
+            IEnumerable<Review> notice = from note in article.NoticesCollection
+                         where note.GetType() == typeof(Review)
+                         select (Review)note;
+            foreach (var n in notice)
             {
-                if (a is Review)
-                {
-                    var im = (Review)a;
-                    average += im.GetRating;
-                    i++;
-                }
+                average += n.GetRating;
+                i++;
             }
             return average / i;
         }
@@ -88,7 +87,7 @@ namespace FLS
             Console.WriteLine("All article by this date " + date.ToString("dd.MM.yyyy"));
             foreach (var article in articles)
             {
-                if (date.ToString("dd.MM.yyyy") == article.GetDateTime.ToString("dd.MM.yyyy"))
+                if (DateTime.Equals(date.Date, article.GetDateTime.Date))
                 {
                     PrintArticleInfo(article);
                 }
@@ -97,9 +96,9 @@ namespace FLS
 
 	    public static void PrintUserWithNCommentByArticle(List<Article> articles, int n)
 	    {
-            int count = 0;
             foreach (var article in articles)
             {
+                int count = 0;
                 foreach (var note in article.NoticesCollection)
                 {
                     if (note.GetType().Name == "Comment")
@@ -110,7 +109,6 @@ namespace FLS
                 if (count > n)
                 {
                     Console.WriteLine("Article by user {0} has more than {1} comments", article.GetUser, n);
-                    count = 0;
                 }
             }
 	    }
@@ -124,11 +122,11 @@ namespace FLS
             }
         }
 
-        public static void PrintArticlesContainsSearchText(List<Article> articles, string text)
+        public static void PrintArticlesContainsSearchText(List<Article> articles, string searchText)
         {
             foreach (var article in articles)
             {
-                if (article.Title.Contains(text))
+                if (article.Title.Contains(searchText))
                     PrintArticleInfo(article);
             }
         }
