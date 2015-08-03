@@ -29,7 +29,7 @@ namespace FLS
             Console.WriteLine("All articles published by the user " + user.ToString());
             foreach (var article in articlesList)
             {
-                if (article.GetUser.Equals(user))
+                if (article.User.Equals(user))
                 {
                     PrintArticleInfo(article);
                 }
@@ -40,22 +40,26 @@ namespace FLS
         {
             foreach (var article in articles)
             {
-                foreach (var note in article.NoticesCollection)
+                if (article.NoticesCollection != null)
                 {
-                    if (note != null)
+                    foreach (var note in article.NoticesCollection)
                     {
                         Console.WriteLine(note.NoticeStringFormat());
                     }
                 }
+                else
+                {
+                    Console.WriteLine("Article hasn't elements.");
+                }
             }
         }
 
-        public static void PrintCommentOrReviewByArticle(Article article, dynamic type)
+        public static void PrintCommentOrReviewByArticle(Article article, Type type)
         {
             Console.WriteLine(type + " on the article " + article.Title);
             foreach (var a in article.NoticesCollection)
             {
-                if (a.GetType().Name == type)
+                if (a.GetType() == type)
                 {
                     Console.WriteLine(a.NoticeStringFormat());
                 }
@@ -71,7 +75,7 @@ namespace FLS
                          select (Review)note;
             foreach (var n in notice)
             {
-                average += n.GetRating;
+                average += n.Rating;
                 i++;
             }
             return average / i;
@@ -87,7 +91,7 @@ namespace FLS
             Console.WriteLine("All article by this date " + date.ToString("dd.MM.yyyy"));
             foreach (var article in articles)
             {
-                if (DateTime.Equals(date.Date, article.GetDateTime.Date))
+                if (DateTime.Equals(date.Date, article.DateOfCreation.Date))
                 {
                     PrintArticleInfo(article);
                 }
@@ -108,7 +112,7 @@ namespace FLS
                 }
                 if (count > n)
                 {
-                    Console.WriteLine("Article by user {0} has more than {1} comments", article.GetUser, n);
+                    Console.WriteLine("Article by user {0} has more than {1} comments", article.User, n);
                 }
             }
 	    }

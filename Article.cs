@@ -32,12 +32,12 @@ namespace FLS
 			set { content = value; }
 		}
 
-        public User GetUser 
+        public User User 
         {
             get { return user; }
         }
 
-        public DateTime GetDateTime
+        public DateTime DateOfCreation
         {
             get { return date; }
         }

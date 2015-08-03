@@ -19,10 +19,10 @@ namespace FLS
             ShowInfo.PrintAllNoticeElements(articles);
             Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintCommentOrReviewByArticle(articles[0]);
+            ShowInfo.PrintCommentOrReviewByArticle(articles[0], typeof(Review));
             Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintCommentOrReviewByArticle(articles[0]);
+            ShowInfo.PrintCommentOrReviewByArticle(articles[0], typeof(Comment));
             Console.WriteLine("-----------------------------------------");
 
             ShowInfo.PrintAverageRatingByArticle(articles[0]);

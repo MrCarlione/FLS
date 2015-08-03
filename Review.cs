@@ -11,7 +11,7 @@ namespace FLS
             this.rating = rating;
         }
 
-        public int GetRating
+        public int Rating
         {
             get { return rating; }
         }
