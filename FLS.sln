@@ -1,18 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLS", "FLS.csproj", "{5014D7C4-C94F-438F-9911-7FC6558B2707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLSTests", "..\FLSTests\FLSTests.csproj", "{FAEA1B53-6CB1-4D6F-91B1-FEDE9A4017E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5014D7C4-C94F-438F-9911-7FC6558B2707}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{5014D7C4-C94F-438F-9911-7FC6558B2707}.Debug|x86.ActiveCfg = Debug|x86
 		{5014D7C4-C94F-438F-9911-7FC6558B2707}.Debug|x86.Build.0 = Debug|x86
+		{5014D7C4-C94F-438F-9911-7FC6558B2707}.Release|Any CPU.ActiveCfg = Release|x86
 		{5014D7C4-C94F-438F-9911-7FC6558B2707}.Release|x86.ActiveCfg = Release|x86
 		{5014D7C4-C94F-438F-9911-7FC6558B2707}.Release|x86.Build.0 = Release|x86
+		{FAEA1B53-6CB1-4D6F-91B1-FEDE9A4017E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEA1B53-6CB1-4D6F-91B1-FEDE9A4017E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEA1B53-6CB1-4D6F-91B1-FEDE9A4017E8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FAEA1B53-6CB1-4D6F-91B1-FEDE9A4017E8}.Debug|x86.Build.0 = Debug|Any CPU
+		{FAEA1B53-6CB1-4D6F-91B1-FEDE9A4017E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEA1B53-6CB1-4D6F-91B1-FEDE9A4017E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAEA1B53-6CB1-4D6F-91B1-FEDE9A4017E8}.Release|x86.ActiveCfg = Release|Any CPU
+		{FAEA1B53-6CB1-4D6F-91B1-FEDE9A4017E8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,35 +9,37 @@ namespace FLS
 		{
 			var articles = Initialize();
 
-			ShowInfo.PrintArticles(articles);
+            ShowInfo information = new ShowInfo();
+
+            information.PrintArticles(articles);
             Console.WriteLine("-----------------------------------------");
 
             User user = new User("Oleg", "Popov", 35);
-            ShowInfo.PrintArticlesByUser(articles, user);
+            information.PrintArticlesByUser(articles, user);
             Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintAllNoticeElements(articles);
+            information.PrintAllNoticeElements(articles);
             Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintCommentOrReviewByArticle(articles[0], typeof(Review));
+            information.PrintCommentOrReviewByArticle(articles[0], typeof(Review));
             Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintCommentOrReviewByArticle(articles[0], typeof(Comment));
+            information.PrintCommentOrReviewByArticle(articles[0], typeof(Comment));
             Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintAverageRatingByArticle(articles[0]);
+            information.PrintAverageRatingByArticle(articles[0]);
             Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintArticlesByDate(articles, DateTime.Now);
+            information.PrintArticlesByDate(articles, DateTime.Now);
             Console.WriteLine("-----------------------------------------");
 
-		    ShowInfo.PrintUserWithNCommentByArticle(articles, 1);
+            information.PrintUserWithNCommentByArticle(articles, 1);
             Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintByArticleWithAverageRating(articles, 4);
+            information.PrintByArticleWithAverageRating(articles, 4);
             Console.WriteLine("-----------------------------------------");
 
-            ShowInfo.PrintArticlesContainsSearchText(articles, "news");
+            information.PrintArticlesContainsSearchText(articles, "news");
             Console.WriteLine("-----------------------------------------");
 		    
             Console.ReadKey();
