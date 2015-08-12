@@ -11,35 +11,35 @@ namespace FLS
 
             ShowInfo information = new ShowInfo();
 
-            information.PrintArticles(articles);
+            information.GetArticles(articles);
             Console.WriteLine("-----------------------------------------");
 
             User user = new User("Oleg", "Popov", 35);
-            information.PrintArticlesByUser(articles, user);
+            information.GetArticlesByUser(articles, user);
             Console.WriteLine("-----------------------------------------");
 
-            information.PrintAllNoticeElements(articles);
+            information.AllNoticeElements(articles);
             Console.WriteLine("-----------------------------------------");
 
-            information.PrintCommentOrReviewByArticle(articles[0], typeof(Review));
+            information.CommentOrReviewByArticle<Comment>(articles[0]);
             Console.WriteLine("-----------------------------------------");
 
-            information.PrintCommentOrReviewByArticle(articles[0], typeof(Comment));
+            information.CommentOrReviewByArticle<Review>(articles[0]);
             Console.WriteLine("-----------------------------------------");
 
-            information.PrintAverageRatingByArticle(articles[0]);
+            information.AverageRatingByArticle(articles[0]);
             Console.WriteLine("-----------------------------------------");
 
-            information.PrintArticlesByDate(articles, DateTime.Now);
+            information.ArticlesByDate(articles, DateTime.Now);
             Console.WriteLine("-----------------------------------------");
 
-            information.PrintUserWithNCommentByArticle(articles, 1);
+            information.UserWithNCommentByArticle(articles, 1);
             Console.WriteLine("-----------------------------------------");
 
-            information.PrintByArticleWithAverageRating(articles, 4);
+            information.ArticleWithAverageRating(articles, 4);
             Console.WriteLine("-----------------------------------------");
 
-            information.PrintArticlesContainsSearchText(articles, "news");
+            information.ArticlesContainsSearchText(articles, "news");
             Console.WriteLine("-----------------------------------------");
 		    
             Console.ReadKey();

@@ -16,7 +16,7 @@ namespace FLS
             Console.WriteLine(user.ToString());
         }
 
-        public void PrintArticles(List<Article> articles)
+        public void GetArticles(List<Article> articles)
 		{
             foreach (var article in articles) 
 			{
@@ -24,7 +24,7 @@ namespace FLS
 			}
 		}
 
-        public void PrintArticlesByUser(List<Article> articlesList, User user)
+        public void GetArticlesByUser(List<Article> articlesList, User user)
         {
             Console.WriteLine("All articles published by the user " + user.ToString());
             foreach (var article in articlesList)
@@ -36,7 +36,7 @@ namespace FLS
             }
         }
 
-        public void PrintAllNoticeElements(List<Article> articles)
+        public void AllNoticeElements(List<Article> articles)
         {
             foreach (var article in articles)
             {
@@ -54,19 +54,16 @@ namespace FLS
             }
         }
 
-        public void PrintCommentOrReviewByArticle(Article article, Type type)
+        public void CommentOrReviewByArticle<T>(Article article) where T : Comment
         {
-            Console.WriteLine(type + " on the article " + article.Title);
-            foreach (var a in article.NoticesCollection)
+            Console.WriteLine("INotice on the article " + article.Title);
+            foreach (var a in article.NoticesCollection.OfType<T>)
             {
-                if (a.GetType() == type)
-                {
-                    Console.WriteLine(a.NoticeStringFormat());
-                }
+                Console.WriteLine(a.NoticeStringFormat());
             }
         }
 
-        private double AverageRating(Article article)
+        public double AverageRating(Article article)
         {
             double average = 0;
             int i = 0;
@@ -81,12 +78,12 @@ namespace FLS
             return average / i;
         }
 
-        public void PrintAverageRatingByArticle(Article article)
+        public void AverageRatingByArticle(Article article)
         {
             Console.WriteLine("Average rating by article \"{0}\" is {1:#.##}.", article.Title, AverageRating(article));
         }
 
-        public void PrintArticlesByDate(List<Article> articles, DateTime date)
+        public void ArticlesByDate(List<Article> articles, DateTime date)
         {
             Console.WriteLine("All article by this date " + date.ToString("dd.MM.yyyy"));
             foreach (var article in articles)
@@ -98,7 +95,7 @@ namespace FLS
             }
         }
 
-	    public void PrintUserWithNCommentByArticle(List<Article> articles, int n)
+	    public void UserWithNCommentByArticle(List<Article> articles, int n)
 	    {
             foreach (var article in articles)
             {
@@ -117,7 +114,7 @@ namespace FLS
             }
 	    }
 
-        public void PrintByArticleWithAverageRating(List<Article> articles, double rating)
+        public void ArticleWithAverageRating(List<Article> articles, double rating)
         {
             foreach (var article in articles)
             {
@@ -126,7 +123,7 @@ namespace FLS
             }
         }
 
-        public void PrintArticlesContainsSearchText(List<Article> articles, string searchText)
+        public void ArticlesContainsSearchText(List<Article> articles, string searchText)
         {
             foreach (var article in articles)
             {
